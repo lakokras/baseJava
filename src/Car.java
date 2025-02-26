@@ -3,13 +3,13 @@ import java.util.List;
 
 class Wheel {
     void drive() {
-        System.out.println("Колеса едут");
+        System.out.println("Колеса катяться");
     }
 }
 
 class Engine {
     void drive() {
-        System.out.println("Двигатель запущен");
+        System.out.println("Двигатель работает");
     }
 }
 
