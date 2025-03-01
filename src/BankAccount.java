@@ -1,30 +1,32 @@
-public class BankAccount {
+public class BankAccount extends Human {
 
     private final String accountNumber;
     private double balance;
-    private String ownerName;
 
 
-    public BankAccount(String accountNumber, double balance, String ownerName) {
+    public BankAccount(String name, int age, String accountNumber, double balance) {
+        super(name, age);
         this.accountNumber = accountNumber;
         this.balance = balance;
-        this.ownerName = ownerName;
     }
 
-    void displayBalance() {
-        System.out.printf("%s текущий баланс: %.2f \n", ownerName, balance);
+    public void displayAccountBalance() {
+        displayInfo();
+        System.out.printf("Ваш текущий баланс: %.2f \n", balance);
     }
 
-    void deposit(double amount) {
+    public void deposit(double amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException("Баланс не может быть меньше 0");
+            throw new IllegalArgumentException("Сумма пополнения не может быть отрицательным числом");
         } this.balance += amount;
+        System.out.printf("Начислена сумма %.2f \n", amount);
     }
 
-    void withdraw(double amount) {
+    public void withdraw(double amount) {
         if (amount > balance) {
-            throw new IllegalArgumentException("Сумма не может превышать текущий баланс");
+            throw new IllegalArgumentException("Сумма снятия не может превышать текущий баланс");
         } this.balance -= amount;
+        System.out.printf("Списана сумма %.2f \n", amount);
     }
 
     public String getAccountNumber() {
@@ -33,13 +35,5 @@ public class BankAccount {
 
     public double getBalance() {
         return balance;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
     }
 }
