@@ -1,19 +1,16 @@
-class Person {
+class Human {
 
     private String name;
     private int age;
     private String gender;
 
-    public Person(String name, int age, String gender) {
+    public Human(String name, int age) {
         this.name = name;
         this.age = age;
-        this.gender = gender;
     }
 
-    void displayInfo() {
-        setGender(gender);
-        setName(name);
-        setAge(age);
+    public void displayInfo() {
+        System.out.printf("Имя: %s, Возраст: %d | ", name, age);
     }
 
     public String getName() {
@@ -32,13 +29,5 @@ class Person {
         if (age < 0 || age > 120) {
             throw new IllegalArgumentException("Неверный возраст");
         } this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 }
