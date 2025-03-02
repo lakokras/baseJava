@@ -2,7 +2,6 @@ class Human {
 
     private String name;
     private int age;
-    private String gender;
 
     public Human(String name, int age) {
         this.name = name;
@@ -10,11 +9,11 @@ class Human {
     }
 
     public void displayInfo() {
-        System.out.printf("Имя: %s, Возраст: %d | ", name, age);
+        System.out.printf("Имя: %s, Возраст: %d — ", name, age);
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -22,7 +21,7 @@ class Human {
     }
 
     public int getAge() {
-        return this.age;
+        return age;
     }
 
     public void setAge(int age) {
