@@ -3,20 +3,21 @@ public class Car {
     private final String model;
     private final String year;
     private double speed;
-    private String owner;
 
-    public Car(String model, String year, double speed, String owner) {
+    public Car(String model, String year, double speed) {
         this.model = model;
         this.year = year;
         this.speed = speed;
-        this.owner = owner;
     }
 
     public void displayCarInfo() {
-        System.out.printf("Автомобиль — %s, %s года, Текущая скорость: %.2f \n", model, year, speed);
+        System.out.printf("Ваш втомобиль — %s, %s года \n", model, year);
     }
 
     public void accelerate(int increment) {
+        if (increment < 0) {
+            throw new IllegalArgumentException("хз, как ты собрался прибавлять отрицательной скоростью газку");
+        }
         this.speed += increment;
         System.out.printf("Текущая скорость: %.2f \n", speed);
     }
