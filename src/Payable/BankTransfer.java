@@ -1,3 +1,5 @@
+package Payable;
+
 public class BankTransfer implements Payable {
 
     private String accountNumber;

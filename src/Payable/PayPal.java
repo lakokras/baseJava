@@ -1,3 +1,5 @@
+package Payable;
+
 public class PayPal implements Payable {
 
     private String email;

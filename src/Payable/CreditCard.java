@@ -1,3 +1,5 @@
+package Payable;
+
 public class CreditCard implements Payable {
 
     private String cardNumber;
