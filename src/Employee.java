@@ -22,7 +22,7 @@ public abstract class Employee {
 
     public void setName(String name) {
         if (null == name || name.trim().isEmpty()) {
-            throw new IllegalArgumentException("Чего пустуем");
+            throw new IllegalArgumentException("Имя не может быть пустым");
         }
         this.name = name.trim();
     }
@@ -32,7 +32,7 @@ public abstract class Employee {
     }
 
     public void setId(int id) {
-        if (id < 0) throw new IllegalArgumentException("Чего это мы отрицательные");
+        if (id < 0) throw new IllegalArgumentException("Поле ID не должно быть отрицательным");
         this.id = id;
     }
 
@@ -41,54 +41,7 @@ public abstract class Employee {
     }
 
     public void setSalary(double salary) {
-        if (salary < 0) throw new IllegalArgumentException("Чего это мы отрицательные");
+        if (salary < 0) throw new IllegalArgumentException("Зарплата не может быть отрицательной");
         this.salary = salary;
-    }
-}
-
-
-class Manager extends Employee{
-
-    private String department;
-
-    Manager(String name, int id, double salary, String department) {
-        super(name, id, salary);
-        this.department = department;
-    }
-
-    @Override
-    public void work() {
-        System.out.println("Работает " + getName() + " в " + department);
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-}
-
-class Developer extends Employee {
-    private String programmingLanguage;
-
-
-    Developer(String name, int id, double salary, String programmingLanguage) {
-        super(name, id, salary);
-        this.programmingLanguage = programmingLanguage;
-    }
-
-    @Override
-    public void work() {
-        System.out.println("Работает " + getName() + " использует " + getProgrammingLanguage());
-    }
-
-    public String getProgrammingLanguage() {
-        return programmingLanguage;
-    }
-
-    public void setProgrammingLanguage(String programmingLanguage) {
-        this.programmingLanguage = programmingLanguage;
     }
 }
