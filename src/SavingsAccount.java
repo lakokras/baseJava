@@ -6,6 +6,10 @@ public class SavingsAccount extends BankAccount {
         setInterestRate(interestRate);
     }
 
+    public void applyInterest(){
+        balance += (balance * interestRate);
+    }
+
     public double getInterestRate() {
         return interestRate;
     }
