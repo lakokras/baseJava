@@ -2,39 +2,22 @@ public class Program{
 
     public static void main(String[] args) {
 
+        Human person1 = new Human("Oleg");
 
-        Payable[] payableMethods = new Payable[3];
-        payableMethods[0] = new CreditCard("1234-5678-9123-4567");
-        payableMethods[1] = new PayPal("example@gmail.com");
-        payableMethods[2] = new BankTransfer("109249071");
+        BankAccount account1 = new BankAccount(1, 5000, person1.getName());
+        account1.displayBalance();
+        account1.deposit(5000);
+        account1.displayBalance();
 
-        for (Payable payable : payableMethods) {
-            payable.pay(100);
-        }
+        /* обработка ошибки
+        account1.withdraw(25000);
+        account1.displayBalance();
+         */
 
+        SavingsAccount savings = new SavingsAccount(account1.getAccountNumber(), account1.getBalance(),
+                person1.getName(), 0.05);
+        savings.applyInterest();
+        savings.displayBalance();
 
-
-
-
-//        Employee manager = new Manager("Апероль", 12, 120000, "IT");
-//        Employee developer = new Developer("Айзат", 11, 70000, "PHP");
-//
-//        manager.work();
-//        manager.displayEmployeeInfo();
-//
-//        developer.work();
-//        developer.displayEmployeeInfo();
-
-
-//
-//
-//        CarOwner owner = new CarOwner("Даниил", 27);
-//        Car car1 = new Car("BMW", "2010", 0);
-//
-//        owner.displayInfo();
-//        car1.displayCarInfo();
-//        // методы класса Car
-//        car1.accelerate(70);
-//        car1.brake(20);
     }
 }
