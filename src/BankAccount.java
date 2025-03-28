@@ -8,6 +8,18 @@ public class BankAccount extends Human{
         this.balance = balance;
     }
 
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Была начислена сумма: " + amount);
+    }
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            throw new IllegalArgumentException("Сумма списания не может превышать текущий баланс: " + balance);
+        }
+        balance -= amount;
+        System.out.println("Была списана сумма: " + amount);
+    }
+
     public void displayBalance() {
         System.out.println("Текущий баланс: " + balance);
     }
