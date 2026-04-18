@@ -45,22 +45,18 @@ public class Bank {
 
     public void addAccount(BankAccount account) {
         bankAccounts.add(account);
-//        bankAccounts = Arrays.copyOf(bankAccounts, bankAccounts.length + 1);
-//        bankAccounts[bankAccounts.length - 1] = account;
     }
 
     public void addAccount(SavingsAccount account) {
         savingsAccounts.add(account);
-//        savingsAccounts = Arrays.copyOf(savingsAccounts, savingsAccounts.length + 1);
-//        savingsAccounts[savingsAccounts.length - 1] = account;
     }
 
     // Геттеры
-    public BankAccount[] getBankAccounts() {
-        return bankAccounts.clone();
+    public List <BankAccount> getBankAccounts() {
+        return bankAccounts;
     }
 
-    public SavingsAccount[] getSavingsAccounts() {
-        return savingsAccounts.clone();
+    public List <SavingsAccount> getSavingsAccounts() {
+        return savingsAccounts;
     }
 }
