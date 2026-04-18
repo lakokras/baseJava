@@ -1,6 +1,8 @@
 import exception.*;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Program{
 
@@ -11,8 +13,11 @@ public class Program{
         BankAccount acc1 = new BankAccount("ACC001", 1000, human1.getName());
         SavingsAccount acc2 = new SavingsAccount("SAV001", 5000, 5.0, human2.getName());
 
-        BankAccount[] bankAccounts = {acc1};
-        SavingsAccount[] savingsAccounts = {acc2};
+        List<BankAccount> bankAccounts = new ArrayList<>();
+        bankAccounts.add(acc1);
+        List<SavingsAccount> savingsAccounts = new ArrayList<>();
+        savingsAccounts.add(acc2);
+
         Bank bank = new Bank(bankAccounts, savingsAccounts);
 
         try {
