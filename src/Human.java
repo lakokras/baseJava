@@ -5,10 +5,6 @@ public class Human {
         setName(name);
     }
 
-//    public void humanName() {
-//        System.out.println(name);
-//    }
-
     public String getName() {
         return name;
     }
