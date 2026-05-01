@@ -21,4 +21,9 @@ public class SavingsAccount extends BankAccount {
         }
         this.interestRate = interestRate;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format(", ставка=%.2f %%", interestRate);
+    }
 }
