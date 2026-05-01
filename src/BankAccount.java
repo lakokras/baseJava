@@ -39,6 +39,12 @@ public class BankAccount{
         balance -= amount;
     }
 
+    @Override
+    public String toString() {
+        return String.format("[ID=%s, баланс=%.2f, владелец=%s]",
+                accountID, balance, owner);
+    }
+
     public void displayBalance() {
         System.out.println("Текущий баланс: " + balance);
     }
